@@ -1,0 +1,26 @@
+{
+    "teams": [
+        {
+            "name": "Ottawa Senators",
+            "gp": 12,
+            "wins": 10,
+            "losses": 1,
+            "otl": 1,
+            "gf": 100,
+            "ga": 15,
+            "gd": 85,
+            "playoff_odds": 99
+        },
+        {
+            "name": "Montreal Canadiens",
+            "gp": 12,
+            "wins": 2,
+            "losses": 10,
+            "otl": 0,
+            "gf": 15,
+            "ga": 100,
+            "gd": -85,
+            "playoff_odds": 0
+        }
+    ]
+}

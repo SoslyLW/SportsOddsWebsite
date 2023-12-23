@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+:root {
+  /* Option 1 */
+  /* --text: #141213;
+  --background: #fcf9fb;
+  --primary: #9c9c9c;
+  --secondary: #63AFD0;
+  --accent: #5d1fc1;
+  --tertiary: #DAA8A2; */
+
+  /* Option 2 - TSN Colours */
+  --text: #323232;
+  --background: #ffffff;
+  --primary: #b90a0a;
+  --secondary_text_on_dark: #adadb2;
+  --secondary: #e9ecef;
+  --tertiary : #171e24;
+  --black: #000;
+  --gray1: #2a2b2d;
+  --gray2: #18191b;
+  --gray3: #0d0f10;
+
+  font-family: 'Secular One', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+}
+
+.landing {
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--background);
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10vw;
+}
+
+.footer {
+  align-items: center;
+  background-color: var(--tertiary);
+  padding: 10vw;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1{
+  font-family: 'Secular One', sans-serif;
+  font-size: 42px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+h2{
+  font-family: 'Secular One', sans-serif;
+  font-size: 24px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+h3{
+  font-family: 'Secular One', sans-serif;
+  font-size: 18px;
+  color: var(--text);
+  font-weight: normal;
+}
+
+h4{
+  font-family: 'Secular One', sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.break {
+  padding: 50px;
+}
+
+.header {
+  background-color: #2a2b2d;
+
+  & h1 {
+    color: var(--secondary);
+  }
+
+  & h2 {
+    color: var(--secondary_text_on_dark);
+  }
+
+  & h3 {
+    color: var(--secondary_text_on_dark);
+  }
+}
+
+.data {
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--background);
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10vw;
+
+  & table, tr, th, td {
+    border: 1px solid;
+    border-color: var(--gray1);
+    border-collapse: collapse;
+
+    & td, th {
+      padding: 0.2em 0.5em;
+    }
+
+  }
+}
+
+.skills {
+  background-color: var(--background);
+  font-family: 'Secular One', sans-serif;
+  padding: 10vw;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  & h1 {
+    color: #272829;
+  }
+  
+  & h3 {
+    color: #272829;
+  }
+
+  & ul {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+
+  & li {
+    display: grid;
+    place-items: center;
+    width: max-content;
+    border: 2px solid #272829;
+    border-radius: 8px;
+    position: relative;
+    font-size: 18px;
+    color: #272829;
+    font-weight: normal;
+    padding: 0 1rem;
+    gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      background-color: #272829;
+      color: #BCE8FF;
+      transition: background-color linear 0.3s;
+    }
+  }
+}
+
+.scroll_arrow {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  left: calc(50vw - 25px);
+  transition: 0.3s;
+  transform: translateY(10px);
+  animation: bounceDown 0.4s forwards ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll_arrow img{
+  width: 40px;
+  height: auto;
+  opacity: 100;
+}
+
+.scroll_arrow:hover{
+  transition: 0.3s;
+  transform: translateY(10px);
+  animation: bounceUp 0.4s forwards ease;
+}
+
+@keyframes bounceUp {
+  from {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes bounceDown {
+  from {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 750px) {
+  .about {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  }
+
+  .projects {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  }
+
+  .footer {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  }
+
+  .image_grid_col  {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .button {
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .decorations {
+    display: none;
+  }
+
+  .decorations2 {
+    display: none;
+  }
+
+}
