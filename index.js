@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    fetch("testData.json")
+    fetch("teamsData.json")
     .then(function (response) {
         return response.json();
     })
