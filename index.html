@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
 
   <body>
@@ -18,7 +19,7 @@
   	</div>
 
     <div class="data">
-        <p class="intro">Below is a table featuring the current NHL playoff odds up to <i>2023/12/31</i>.</p>
+        <p class="intro">Below is a table featuring the current NHL playoff odds up to <i>2023/12/31</i>. See the graph below the table for a history of simulations.</p>
         <br>
         <table class="standings_table">
             <thead>
@@ -34,18 +35,9 @@
                     <th>Odds</th>
                 </tr>
             </thead>
-            <tbody id="standings_table">
-
-            </tbody>
-            <!-- <tr>
-                <td>Ottawa Senators</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>Montreal Canadiens</td>
-                <td>0</td>
-            </tr> -->
+            <tbody id="standings_table"></tbody>
         </table>
+        <div id="history_graph" class="history_graph"></div>
     </div>
 
 
