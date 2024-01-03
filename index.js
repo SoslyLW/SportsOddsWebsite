@@ -33,7 +33,7 @@ $(document).ready(function(){
     .then(function (data) {
         var graph = data.graph;
 
-        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.load("current", { packages: ["line"] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
@@ -41,17 +41,30 @@ $(document).ready(function(){
             var options = {
                 title: "Simulation History",
                 focusTarget: 'category',
-                legend: {
-                position: "bottom"
-                },
+                legend: 'none',
                 colors: ["#F47A38", "#5F259F", "#FFB81C", "#003087", "#D2001C", "#CE1126", "#000000", "#6F263D", "#002654", "#006847", "#CE1126", "#FF4C00", "#B9975B", "#A2AAAD", "#154734", "#AF1E2D", "#FFB81C", "#CE1126", "#F47D30", "#0038A8", "#000000", "#F74902", "#FCB514", "#006D75", "#99D9D9", "#002F87", "#002868", "#00205B", "#00843D", "#B4975A", "#C8102E", "#041E42"],
-                'chartArea': {'width': '90%'}
+                'chartArea': {'width': '80%'} //Not supported for material charts
             };
-            var chart = new google.visualization.LineChart(
+            
+            console.log(window.innerWidth);
+            console.log(options);
+
+            if (window.innerWidth >= 600) {
+                options.legend = {
+                        position: "bottom",
+                    }
+            // Mobile settings
+            } else {
+                options.legend = {
+                    position: "none"
+                };
+            }
+
+            var chart = new google.charts.Line(
                 document.getElementById("history_graph")
             );
 
-            chart.draw(chartData, options);
+            chart.draw(chartData, google.charts.Line.convertOptions(options));
         }
     })
 
