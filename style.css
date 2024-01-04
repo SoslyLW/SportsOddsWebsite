@@ -170,6 +170,12 @@ h4{
     text-align: left;
   }
 
+  & .data_table {
+    overflow-x: auto;    
+    display: flex;
+    flex-direction: column;
+  }
+
   & .history_graph {
     width: 100%;
     padding: 1em 0em;
